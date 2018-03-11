@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content1 %}
+	<h2 class='thanks'> We appreciate your feedback. We would like to follow-up with you regarding your feedback. <br>
+		Please enter your contact information below and we will get back to you as soon as possible. </h2>
+
+<form action="{{ url_for('thanks') }}" method="POST">
+    <br>{{ form.hidden_tag() }}
+    {{ form.Name.label }} {{ form.Name() }}<br>
+    {{ form.Email.label }} {{ form.Email() }}<br>
+    {{ form.Phone.label }} {{ form.Phone() }}<br><br>
+    {{ form.submit() }}<br>
+</form>
+
+{% endblock %}

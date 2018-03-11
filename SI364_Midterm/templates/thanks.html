@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content1 %}
+<div>
+{% for message in get_flashed_messages() %}
+    <strong>{{ message }}</strong><br>
+{% endfor %}
+</div>
+	<h2 class='thanks'>Thank you for using the Good Foods Find Web App! <br> 
+		Please come back again soon!</h2>
+{% endblock %}

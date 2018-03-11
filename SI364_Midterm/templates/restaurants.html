@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content1 %}
+
+<h2>Restaurants Searched</h2>
+
+{% if restaurants|length == 0 %}
+	<p> There are no restaurants to display. </p>
+{% else %}
+	{% for restaurant in restaurants %}
+	    <p>{{ restaurant }}</p>
+	{% endfor %}
+{% endif %}
+
+{% endblock %}

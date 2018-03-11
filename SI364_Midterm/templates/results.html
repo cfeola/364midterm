@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content1 %}
+
+<h2>Search Results</h2>
+ 
+{% for place in data %}
+     <h3>{{ place }}</h3>
+     <ul>
+     {% for each in data[place] %}
+     <li> <strong>{{ each }}: </strong>{{ data[place][each] }}</li>
+		{% endfor %} 
+	</ul>    
+{% endfor %}
+
+<div>
+{% for message in get_flashed_messages() %}
+    <br><strong>{{ message }}</strong>
+{% endfor %}
+</div>
+
+{% endblock %}

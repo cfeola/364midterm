@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content1 %}
+
+<h2>Cities Searched</h2>
+
+{% if cities|length == 0 %}
+	<p> There are no cities to display. </p>
+{% else %}
+	{% for city in cities %}
+	    <p>{{ city }}</p>
+	{% endfor %}
+{% endif %}
+
+{% endblock %}

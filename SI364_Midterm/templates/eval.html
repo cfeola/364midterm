@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content1 %}
+  <form action="{{url_for('evalResults')}}" method="GET">
+    {{ form.hidden_tag() }}
+    {{ form.eval.label }} {{ form.eval() }}<br>
+    {{ form.submit() }}<br>
+  </form>
+{% endblock %}

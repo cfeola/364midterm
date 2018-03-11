@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Good Food Finds</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1> Good Food Finds </h1>
+
+{% block content1 %}
+
+<h2> Welcome to our website! </h2>
+<form action="{{ url_for('home') }}" method="POST">
+    {{ form.choice.label() }}{{ form.choice() }}<br>
+    {{ form.submit() }}
+    {{ form.hidden_tag() }}
+</form>
+
+<div>
+{% for message in get_flashed_messages() %}
+    <br><strong>{{ message }}</strong>
+{% endfor %}
+</div>
+
+{% endblock %}
+
+<p>------------</p>
+<h2>Navigation</h2>
+<ul>
+    <li><a href="{{ url_for('home')}}"> Home </a></li>
+    <li><a href="{{ url_for('search')}}"> Search </a></li>
+    <li><a href="{{ url_for('all_names')}}"> All Names </a></li>
+    <li><a href="{{ url_for('cities')}}"> All Cities </a></li>
+    <li><a href="{{ url_for('restaurants')}}"> All Restaurants </a></li>
+    <li><a href="{{ url_for('eval')}}"> Give Us Your Feedback </a></li>
+    <li><a href="{{ url_for('contacts')}}"> Contacts </a></li>
+</ul>

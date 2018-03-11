@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content1 %}
+
+<h2>Contacts</h2>
+
+{% if contacts|length == 0 %}
+	<p> There is no contact information to display. </p>
+{% else %}
+	{% for contact in contacts %}
+	    <p>{{ contact }}</p>
+	{% endfor %}
+{% endif %}
+
+{% endblock %}

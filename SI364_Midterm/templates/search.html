@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content1 %}
+
+<form action="{{ url_for('search') }}" method="POST">
+    {{ form.name.label() }}  {{ form.name() }}<br><br>
+    {{ form.city.label() }}  {{ form.city() }}<br><br>
+    {{ form.state.label() }}  {{ form.state() }}<br><br>
+	{{ form.cuisine.label() }}  {{ form.cuisine() }}<br><br>
+	{{ form.price.label }}  {{ form.price() }}<br><br>
+    {{ form.submit() }}
+    {{ form.hidden_tag() }}
+</form>
+
+<div>
+{% for message in get_flashed_messages() %}
+    <br><strong>{{ message }}</strong>
+{% endfor %}
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content1 %}
+
+<h2>Names Visited</h2>
+{% if names|length == 0 %}
+	<p> There are no names to display. </p>
+{% else %}
+	{% for n in names %}
+	    <p>{{ n }}</p>
+	{% endfor %}
+{% endif %}
+
+{% endblock %}

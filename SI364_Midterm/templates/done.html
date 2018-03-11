@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+ 
+{% block content1 %}
+<div>
+{% for message in get_flashed_messages() %}
+    <strong>{{ message }}</strong><br>
+{% endfor %}
+</div>
+
+  <form action="{{url_for('doneResults')}}" method="GET">
+    <br>{{ form.hidden_tag() }}
+    {{ form.done.label }} {{ form.done() }}<br>
+    {{ form.submit() }}<br>
+  </form>
+
+
+{% endblock %}
